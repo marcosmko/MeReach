@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F73C5A7D22CA86A000E16863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C5A7C22CA86A000E16863 /* AppDelegate.swift */; };
+		F73C5A7F22CA86A000E16863 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C5A7E22CA86A000E16863 /* ViewController.swift */; };
+		F73C5A8222CA86A000E16863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73C5A8022CA86A000E16863 /* Main.storyboard */; };
+		F73C5A8522CA86A000E16863 /* MeReach.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F73C5A8322CA86A000E16863 /* MeReach.xcdatamodeld */; };
+		F73C5A8722CA86A200E16863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F73C5A8622CA86A200E16863 /* Assets.xcassets */; };
+		F73C5A8A22CA86A200E16863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73C5A8822CA86A200E16863 /* LaunchScreen.storyboard */; };
+		F73C5A9522CA86A200E16863 /* MeReachTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C5A9422CA86A200E16863 /* MeReachTests.swift */; };
+		F73C5AA022CA86A200E16863 /* MeReachUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C5A9F22CA86A200E16863 /* MeReachUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F73C5A9122CA86A200E16863 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F73C5A7122CA86A000E16863 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F73C5A7822CA86A000E16863;
+			remoteInfo = MeReach;
+		};
+		F73C5A9C22CA86A200E16863 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F73C5A7122CA86A000E16863 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F73C5A7822CA86A000E16863;
+			remoteInfo = MeReach;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F73C5A7922CA86A000E16863 /* MeReach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeReach.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73C5A7C22CA86A000E16863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F73C5A7E22CA86A000E16863 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F73C5A8122CA86A000E16863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F73C5A8422CA86A000E16863 /* MeReach.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeReach.xcdatamodel; sourceTree = "<group>"; };
+		F73C5A8622CA86A200E16863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F73C5A8922CA86A200E16863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F73C5A8B22CA86A200E16863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F73C5A9022CA86A200E16863 /* MeReachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeReachTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73C5A9422CA86A200E16863 /* MeReachTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeReachTests.swift; sourceTree = "<group>"; };
+		F73C5A9622CA86A200E16863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F73C5A9B22CA86A200E16863 /* MeReachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeReachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73C5A9F22CA86A200E16863 /* MeReachUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeReachUITests.swift; sourceTree = "<group>"; };
+		F73C5AA122CA86A200E16863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F73C5A7622CA86A000E16863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73C5A8D22CA86A200E16863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73C5A9822CA86A200E16863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F73C5A7022CA86A000E16863 = {
+			isa = PBXGroup;
+			children = (
+				F73C5A7B22CA86A000E16863 /* MeReach */,
+				F73C5A9322CA86A200E16863 /* MeReachTests */,
+				F73C5A9E22CA86A200E16863 /* MeReachUITests */,
+				F73C5A7A22CA86A000E16863 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F73C5A7A22CA86A000E16863 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F73C5A7922CA86A000E16863 /* MeReach.app */,
+				F73C5A9022CA86A200E16863 /* MeReachTests.xctest */,
+				F73C5A9B22CA86A200E16863 /* MeReachUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F73C5A7B22CA86A000E16863 /* MeReach */ = {
+			isa = PBXGroup;
+			children = (
+				F73C5A7C22CA86A000E16863 /* AppDelegate.swift */,
+				F73C5A7E22CA86A000E16863 /* ViewController.swift */,
+				F73C5A8022CA86A000E16863 /* Main.storyboard */,
+				F73C5A8622CA86A200E16863 /* Assets.xcassets */,
+				F73C5A8822CA86A200E16863 /* LaunchScreen.storyboard */,
+				F73C5A8B22CA86A200E16863 /* Info.plist */,
+				F73C5A8322CA86A000E16863 /* MeReach.xcdatamodeld */,
+			);
+			path = MeReach;
+			sourceTree = "<group>";
+		};
+		F73C5A9322CA86A200E16863 /* MeReachTests */ = {
+			isa = PBXGroup;
+			children = (
+				F73C5A9422CA86A200E16863 /* MeReachTests.swift */,
+				F73C5A9622CA86A200E16863 /* Info.plist */,
+			);
+			path = MeReachTests;
+			sourceTree = "<group>";
+		};
+		F73C5A9E22CA86A200E16863 /* MeReachUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F73C5A9F22CA86A200E16863 /* MeReachUITests.swift */,
+				F73C5AA122CA86A200E16863 /* Info.plist */,
+			);
+			path = MeReachUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F73C5A7822CA86A000E16863 /* MeReach */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73C5AA422CA86A200E16863 /* Build configuration list for PBXNativeTarget "MeReach" */;
+			buildPhases = (
+				F73C5A7522CA86A000E16863 /* Sources */,
+				F73C5A7622CA86A000E16863 /* Frameworks */,
+				F73C5A7722CA86A000E16863 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeReach;
+			productName = MeReach;
+			productReference = F73C5A7922CA86A000E16863 /* MeReach.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F73C5A8F22CA86A200E16863 /* MeReachTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73C5AA722CA86A200E16863 /* Build configuration list for PBXNativeTarget "MeReachTests" */;
+			buildPhases = (
+				F73C5A8C22CA86A200E16863 /* Sources */,
+				F73C5A8D22CA86A200E16863 /* Frameworks */,
+				F73C5A8E22CA86A200E16863 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F73C5A9222CA86A200E16863 /* PBXTargetDependency */,
+			);
+			name = MeReachTests;
+			productName = MeReachTests;
+			productReference = F73C5A9022CA86A200E16863 /* MeReachTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F73C5A9A22CA86A200E16863 /* MeReachUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73C5AAA22CA86A200E16863 /* Build configuration list for PBXNativeTarget "MeReachUITests" */;
+			buildPhases = (
+				F73C5A9722CA86A200E16863 /* Sources */,
+				F73C5A9822CA86A200E16863 /* Frameworks */,
+				F73C5A9922CA86A200E16863 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F73C5A9D22CA86A200E16863 /* PBXTargetDependency */,
+			);
+			name = MeReachUITests;
+			productName = MeReachUITests;
+			productReference = F73C5A9B22CA86A200E16863 /* MeReachUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F73C5A7122CA86A000E16863 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Marcos Kobuchi";
+				TargetAttributes = {
+					F73C5A7822CA86A000E16863 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					F73C5A8F22CA86A200E16863 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = F73C5A7822CA86A000E16863;
+					};
+					F73C5A9A22CA86A200E16863 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = F73C5A7822CA86A000E16863;
+					};
+				};
+			};
+			buildConfigurationList = F73C5A7422CA86A000E16863 /* Build configuration list for PBXProject "MeReach" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F73C5A7022CA86A000E16863;
+			productRefGroup = F73C5A7A22CA86A000E16863 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F73C5A7822CA86A000E16863 /* MeReach */,
+				F73C5A8F22CA86A200E16863 /* MeReachTests */,
+				F73C5A9A22CA86A200E16863 /* MeReachUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F73C5A7722CA86A000E16863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F73C5A8A22CA86A200E16863 /* LaunchScreen.storyboard in Resources */,
+				F73C5A8722CA86A200E16863 /* Assets.xcassets in Resources */,
+				F73C5A8222CA86A000E16863 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73C5A8E22CA86A200E16863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73C5A9922CA86A200E16863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F73C5A7522CA86A000E16863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F73C5A8522CA86A000E16863 /* MeReach.xcdatamodeld in Sources */,
+				F73C5A7F22CA86A000E16863 /* ViewController.swift in Sources */,
+				F73C5A7D22CA86A000E16863 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73C5A8C22CA86A200E16863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F73C5A9522CA86A200E16863 /* MeReachTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73C5A9722CA86A200E16863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F73C5AA022CA86A200E16863 /* MeReachUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F73C5A9222CA86A200E16863 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F73C5A7822CA86A000E16863 /* MeReach */;
+			targetProxy = F73C5A9122CA86A200E16863 /* PBXContainerItemProxy */;
+		};
+		F73C5A9D22CA86A200E16863 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F73C5A7822CA86A000E16863 /* MeReach */;
+			targetProxy = F73C5A9C22CA86A200E16863 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F73C5A8022CA86A000E16863 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F73C5A8122CA86A000E16863 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F73C5A8822CA86A200E16863 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F73C5A8922CA86A200E16863 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F73C5AA222CA86A200E16863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F73C5AA322CA86A200E16863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F73C5AA522CA86A200E16863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeReach/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kobuchi.MeReach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F73C5AA622CA86A200E16863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeReach/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kobuchi.MeReach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F73C5AA822CA86A200E16863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeReachTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kobuchi.MeReachTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeReach.app/MeReach";
+			};
+			name = Debug;
+		};
+		F73C5AA922CA86A200E16863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeReachTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kobuchi.MeReachTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeReach.app/MeReach";
+			};
+			name = Release;
+		};
+		F73C5AAB22CA86A200E16863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeReachUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kobuchi.MeReachUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MeReach;
+			};
+			name = Debug;
+		};
+		F73C5AAC22CA86A200E16863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeReachUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kobuchi.MeReachUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MeReach;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F73C5A7422CA86A000E16863 /* Build configuration list for PBXProject "MeReach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73C5AA222CA86A200E16863 /* Debug */,
+				F73C5AA322CA86A200E16863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73C5AA422CA86A200E16863 /* Build configuration list for PBXNativeTarget "MeReach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73C5AA522CA86A200E16863 /* Debug */,
+				F73C5AA622CA86A200E16863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73C5AA722CA86A200E16863 /* Build configuration list for PBXNativeTarget "MeReachTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73C5AA822CA86A200E16863 /* Debug */,
+				F73C5AA922CA86A200E16863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73C5AAA22CA86A200E16863 /* Build configuration list for PBXNativeTarget "MeReachUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73C5AAB22CA86A200E16863 /* Debug */,
+				F73C5AAC22CA86A200E16863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F73C5A8322CA86A000E16863 /* MeReach.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F73C5A8422CA86A000E16863 /* MeReach.xcdatamodel */,
+			);
+			currentVersion = F73C5A8422CA86A000E16863 /* MeReach.xcdatamodel */;
+			path = MeReach.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F73C5A7122CA86A000E16863 /* Project object */;
+}
