@@ -20,6 +20,17 @@
 		F73C5AB622CA8AC200E16863 /* ServerListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C5AB522CA8AC200E16863 /* ServerListRouter.swift */; };
 		F73C5AB822CA8CA400E16863 /* ServerListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C5AB722CA8CA400E16863 /* ServerListModels.swift */; };
 		F73C5ABC22CA8CFD00E16863 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C5ABB22CA8CFD00E16863 /* CoreDataManager.swift */; };
+		F7D5D1FB22CAB495005D946C /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D1FA22CAB495005D946C /* URLSessionExtension.swift */; };
+		F7D5D1FD22CAB4C1005D946C /* ServerListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D1FC22CAB4C1005D946C /* ServerListWorker.swift */; };
+		F7D5D1FF22CAB804005D946C /* ServerListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D1FE22CAB804005D946C /* ServerListAPI.swift */; };
+		F7D5D20C22CAB898005D946C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D20622CAB898005D946C /* APIError.swift */; };
+		F7D5D20D22CAB898005D946C /* RequestCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D20722CAB898005D946C /* RequestCache.swift */; };
+		F7D5D20E22CAB898005D946C /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D20822CAB898005D946C /* SHA1.swift */; };
+		F7D5D20F22CAB898005D946C /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D20922CAB898005D946C /* RequestMethod.swift */; };
+		F7D5D21022CAB898005D946C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D20A22CAB898005D946C /* Request.swift */; };
+		F7D5D21122CAB898005D946C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D20B22CAB898005D946C /* API.swift */; };
+		F7D5D21422CAB941005D946C /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21222CAB941005D946C /* DataExtension.swift */; };
+		F7D5D21522CAB941005D946C /* CFAbsoluteTimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21322CAB941005D946C /* CFAbsoluteTimeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +70,17 @@
 		F73C5AB522CA8AC200E16863 /* ServerListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListRouter.swift; sourceTree = "<group>"; };
 		F73C5AB722CA8CA400E16863 /* ServerListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListModels.swift; sourceTree = "<group>"; };
 		F73C5ABB22CA8CFD00E16863 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F7D5D1FA22CAB495005D946C /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
+		F7D5D1FC22CAB4C1005D946C /* ServerListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListWorker.swift; sourceTree = "<group>"; };
+		F7D5D1FE22CAB804005D946C /* ServerListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListAPI.swift; sourceTree = "<group>"; };
+		F7D5D20622CAB898005D946C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F7D5D20722CAB898005D946C /* RequestCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCache.swift; sourceTree = "<group>"; };
+		F7D5D20822CAB898005D946C /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		F7D5D20922CAB898005D946C /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		F7D5D20A22CAB898005D946C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		F7D5D20B22CAB898005D946C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F7D5D21222CAB941005D946C /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		F7D5D21322CAB941005D946C /* CFAbsoluteTimeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAbsoluteTimeExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +168,13 @@
 			isa = PBXGroup;
 			children = (
 				F73C5AAF22CA881900E16863 /* App */,
+				F7D5D20022CAB83B005D946C /* Mechanism */,
 				F73C5ABD22CA8D3A00E16863 /* Extensions */,
 				F73C5ABF22CA8D4B00E16863 /* Models */,
 				F73C5ABA22CA8CE700E16863 /* Persistence */,
 				F73C5AB022CA885500E16863 /* Presentation */,
-				F73C5AC222CA8D6B00E16863 /* Services */,
 				F73C5AC122CA8D6500E16863 /* Workers */,
+				F73C5AC222CA8D6B00E16863 /* Services */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -198,6 +221,9 @@
 		F73C5ABD22CA8D3A00E16863 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F7D5D21322CAB941005D946C /* CFAbsoluteTimeExtension.swift */,
+				F7D5D21222CAB941005D946C /* DataExtension.swift */,
+				F7D5D1FA22CAB495005D946C /* URLSessionExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +246,7 @@
 		F73C5AC122CA8D6500E16863 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				F7D5D1FC22CAB4C1005D946C /* ServerListWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -227,8 +254,30 @@
 		F73C5AC222CA8D6B00E16863 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F7D5D1FE22CAB804005D946C /* ServerListAPI.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		F7D5D20022CAB83B005D946C /* Mechanism */ = {
+			isa = PBXGroup;
+			children = (
+				F7D5D20522CAB898005D946C /* API */,
+			);
+			path = Mechanism;
+			sourceTree = "<group>";
+		};
+		F7D5D20522CAB898005D946C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F7D5D20622CAB898005D946C /* APIError.swift */,
+				F7D5D20722CAB898005D946C /* RequestCache.swift */,
+				F7D5D20822CAB898005D946C /* SHA1.swift */,
+				F7D5D20922CAB898005D946C /* RequestMethod.swift */,
+				F7D5D20A22CAB898005D946C /* Request.swift */,
+				F7D5D20B22CAB898005D946C /* API.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,12 +412,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F73C5AB422CA8AB600E16863 /* ServerListPresenter.swift in Sources */,
+				F7D5D21022CAB898005D946C /* Request.swift in Sources */,
+				F7D5D1FF22CAB804005D946C /* ServerListAPI.swift in Sources */,
 				F73C5A8522CA86A000E16863 /* MeReach.xcdatamodeld in Sources */,
 				F73C5A7F22CA86A000E16863 /* ServerListViewController.swift in Sources */,
+				F7D5D20E22CAB898005D946C /* SHA1.swift in Sources */,
 				F73C5AB622CA8AC200E16863 /* ServerListRouter.swift in Sources */,
+				F7D5D21422CAB941005D946C /* DataExtension.swift in Sources */,
+				F7D5D21522CAB941005D946C /* CFAbsoluteTimeExtension.swift in Sources */,
+				F7D5D20C22CAB898005D946C /* APIError.swift in Sources */,
+				F7D5D1FD22CAB4C1005D946C /* ServerListWorker.swift in Sources */,
 				F73C5AB822CA8CA400E16863 /* ServerListModels.swift in Sources */,
+				F7D5D1FB22CAB495005D946C /* URLSessionExtension.swift in Sources */,
 				F73C5A7D22CA86A000E16863 /* AppDelegate.swift in Sources */,
+				F7D5D20D22CAB898005D946C /* RequestCache.swift in Sources */,
 				F73C5ABC22CA8CFD00E16863 /* CoreDataManager.swift in Sources */,
+				F7D5D20F22CAB898005D946C /* RequestMethod.swift in Sources */,
+				F7D5D21122CAB898005D946C /* API.swift in Sources */,
 				F73C5AB222CA8AAB00E16863 /* ServerListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

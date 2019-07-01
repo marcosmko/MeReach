@@ -21,9 +21,38 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S9Z-iP-ov7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="UtJ-eh-uY4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hd0-Va-wy7">
+                                            <rect key="frame" x="7" y="7" width="323" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tm-Lv-sIa">
+                                            <rect key="frame" x="342" y="7" width="65" height="30"/>
+                                            <state key="normal" title="Adicionar"/>
+                                            <connections>
+                                                <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QdI-Pc-btu"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="6Tm-Lv-sIa" secondAttribute="bottom" constant="7" id="0rV-3m-gLf"/>
+                                        <constraint firstItem="Hd0-Va-wy7" firstAttribute="top" secondItem="UtJ-eh-uY4" secondAttribute="top" constant="7" id="1OY-pI-D0R"/>
+                                        <constraint firstAttribute="trailing" secondItem="6Tm-Lv-sIa" secondAttribute="trailing" constant="7" id="9x0-yN-7fe"/>
+                                        <constraint firstAttribute="bottom" secondItem="Hd0-Va-wy7" secondAttribute="bottom" constant="7" id="ACU-Lt-hSb"/>
+                                        <constraint firstItem="6Tm-Lv-sIa" firstAttribute="top" secondItem="UtJ-eh-uY4" secondAttribute="top" constant="7" id="JOM-8T-jVg"/>
+                                        <constraint firstItem="Hd0-Va-wy7" firstAttribute="leading" secondItem="UtJ-eh-uY4" secondAttribute="leading" constant="7" id="P5H-MU-FiG"/>
+                                        <constraint firstItem="6Tm-Lv-sIa" firstAttribute="leading" secondItem="Hd0-Va-wy7" secondAttribute="trailing" constant="12" id="Qdh-yn-39Q"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PHR-S8-Tlh">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="PHR-S8-Tlh">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PHR-S8-Tlh" id="TfX-zi-MsQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -31,6 +60,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="P7O-U1-Joe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fkQ-bQ-owS"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,6 +77,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="S9Z-iP-ov7" id="RWR-vd-jyt"/>
+                        <outlet property="urlTextField" destination="Hd0-Va-wy7" id="30o-Ud-Ogw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
