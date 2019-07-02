@@ -13,6 +13,7 @@ protocol ServerListPresenterProtocol {
 }
 
 class ServerListPresenter: ServerListPresenterProtocol {
+    
     weak var viewController: ServerListDisplayLogic?
     
     func present(response: ServerList.ServerStatus.Response) {

@@ -9,15 +9,18 @@
 import Foundation
 import CoreData
 
-class ServerCoreDataWorker {
+enum ServerError: LocalizedError {
+    case database(description: String)
+}
+
+final class ServerCoreDataWorker: ServerWorkerProtocol {
     
     func fetch() throws -> [Server] {
         do {
             let request: NSFetchRequest<Server> = Server.fetchRequest()
             return try CoreDataManager.shared.fetch(request)
         } catch {
-            throw NSError()
-            // throw ChatError.database(description: error.localizedDescription)
+            throw ServerError.database(description: error.localizedDescription)
         }
     }
     
@@ -25,8 +28,7 @@ class ServerCoreDataWorker {
         do {
             try CoreDataManager.shared.insert(server)
         } catch {
-            throw NSError()
-            // throw ChatError.database(description: error.localizedDescription)
+            throw ServerError.database(description: error.localizedDescription)
         }
     }
     
@@ -34,9 +36,16 @@ class ServerCoreDataWorker {
         do {
             try CoreDataManager.shared.delete(server)
         } catch {
-            throw NSError()
-            // throw ChatError.database(description: error.localizedDescription)
+            throw ServerError.database(description: error.localizedDescription)
         }
     }
     
+}
+
+// MARK: - Server Worker API
+
+protocol ServerWorkerProtocol {
+    func fetch() throws -> [Server]
+    func create(_ server: Server) throws
+    func delete(_ server: Server) throws
 }

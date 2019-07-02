@@ -99,7 +99,6 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
     
     func display(viewModel: ServerList.ServerStatus.ViewModel) {
         self.displayedServers.accept(viewModel.displayedServers)
-        self.tableView.reloadData()
     }
     
 }

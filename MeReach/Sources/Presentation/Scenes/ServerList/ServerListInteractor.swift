@@ -24,17 +24,17 @@ protocol ServerListDataStore {
 class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
     
     var presenter: ServerListPresenterProtocol?
-    var serverListWorker: ServerListWorker = ServerListWorker(serverListStore: ServerListAPIDummy())
-    var serverCoreDataWorker: ServerCoreDataWorker = ServerCoreDataWorker()
+    private var serverListWorker: ServerListWorker = ServerListWorker(serverListStore: ServerListAPIDummy())
+    private var serverWorkerProtocol: ServerWorkerProtocol = ServerCoreDataWorker()
     
-    var timer: Timer?
-    let lock: NSLock = NSLock()
+    private var timer: Timer?
+    private let lock: NSLock = NSLock()
     
     let servers: BehaviorRelay<[(server: Server, isOnline: Bool)]> = BehaviorRelay(value: [])
     
     func didLoad() {
         // fetch from persistence store
-        let servers =  try! self.serverCoreDataWorker.fetch().map({ ($0, false) })
+        let servers =  try! self.serverWorkerProtocol.fetch().map({ ($0, false) })
         self.servers.accept(servers)
         
         // observe servers
@@ -63,7 +63,7 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
             // add url and ping
             let server = Server(url: request.url)
             self.servers.accept(self.servers.value + [(server, false)])
-            try! self.serverCoreDataWorker.create(server)
+            try! self.serverWorkerProtocol.create(server)
             self.verify(url: request.url)
         })
         QueueManager.shared.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
@@ -74,7 +74,7 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
             var servers = self.servers.value
             let server = servers.remove(at: request.row)
             self.servers.accept(servers)
-            try! self.serverCoreDataWorker.delete(server.server)
+            try! self.serverWorkerProtocol.delete(server.server)
         })
         QueueManager.shared.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
     }

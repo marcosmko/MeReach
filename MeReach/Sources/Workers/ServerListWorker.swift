@@ -10,7 +10,7 @@ import Foundation
 
 class ServerListWorker {
     
-    var serverListStore: ServerListStoreProtocol
+    private(set) var serverListStore: ServerListStoreProtocol
     
     init(serverListStore: ServerListStoreProtocol) {
         self.serverListStore = serverListStore
@@ -22,7 +22,7 @@ class ServerListWorker {
     
 }
 
-// MARK: - Orders store API
+// MARK: - Server List API
 
 protocol ServerListStoreProtocol {
     func ping() -> ((_ url: URL) throws -> Bool)
