@@ -18,7 +18,7 @@ protocol ServerListInteractorProtocol {
 }
 
 protocol ServerListDataStore {
-    var servers: BehaviorRelay<[(server: Server, isOnline: Bool)]>  { get }
+    var servers: BehaviorRelay<[(server: Server, isOnline: Bool)]> { get }
 }
 
 class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
@@ -34,7 +34,7 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
     
     func didLoad() {
         // fetch from persistence store
-        let servers =  try! self.serverWorkerProtocol.fetch().map({ ($0, false) })
+        let servers = try! self.serverWorkerProtocol.fetch().map({ ($0, false) })
         self.servers.accept(servers)
         
         // observe servers
@@ -63,7 +63,7 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
             // add url and ping
             let server = Server(url: request.url)
             self.servers.accept(self.servers.value + [(server, false)])
-            try! self.serverWorkerProtocol.create(server)
+            try? self.serverWorkerProtocol.create(server)
             self.verify(url: request.url)
         })
         QueueManager.shared.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
@@ -74,7 +74,7 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
             var servers = self.servers.value
             let server = servers.remove(at: request.row)
             self.servers.accept(servers)
-            try! self.serverWorkerProtocol.delete(server.server)
+            try? self.serverWorkerProtocol.delete(server.server)
         })
         QueueManager.shared.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
     }
@@ -97,4 +97,3 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
     }
     
 }
-

@@ -59,9 +59,7 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
         self.displayedServers
             .bind(to: self.tableView
                 .rx
-                .items(cellIdentifier: "cell", cellType: UITableViewCell.self)) {
-                    row, server, cell in
-                    
+                .items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { _, server, cell in
                     cell.textLabel?.text = server.url
                     cell.backgroundColor = server.isOnline ? UIColor.green : UIColor.red
             }
