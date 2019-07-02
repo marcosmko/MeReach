@@ -91,6 +91,7 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
             .subscribe(onNext: { (_) in
                 guard let url = URL(string: self.urlTextField.text ?? "") else { return }
                 self.interactor?.add(request: ServerList.AddNewServer.Request(url: url))
+                self.urlTextField.text = "http://"
             })
             .disposed(by: ReactManager.shared.disposeBag)
     }
