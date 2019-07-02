@@ -31,6 +31,8 @@
 		F7D5D21122CAB898005D946C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D20B22CAB898005D946C /* API.swift */; };
 		F7D5D21422CAB941005D946C /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21222CAB941005D946C /* DataExtension.swift */; };
 		F7D5D21522CAB941005D946C /* CFAbsoluteTimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21322CAB941005D946C /* CFAbsoluteTimeExtension.swift */; };
+		F7D5D21722CAC877005D946C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21622CAC877005D946C /* Server.swift */; };
+		F7D5D21922CACC92005D946C /* ServerCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21822CACC92005D946C /* ServerCoreDataWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		F7D5D20B22CAB898005D946C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F7D5D21222CAB941005D946C /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		F7D5D21322CAB941005D946C /* CFAbsoluteTimeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFAbsoluteTimeExtension.swift; sourceTree = "<group>"; };
+		F7D5D21622CAC877005D946C /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		F7D5D21822CACC92005D946C /* ServerCoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCoreDataWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +235,7 @@
 		F73C5ABF22CA8D4B00E16863 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F7D5D21622CAC877005D946C /* Server.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				F7D5D1FC22CAB4C1005D946C /* ServerListWorker.swift */,
+				F7D5D21822CACC92005D946C /* ServerCoreDataWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -421,9 +427,11 @@
 				F7D5D21422CAB941005D946C /* DataExtension.swift in Sources */,
 				F7D5D21522CAB941005D946C /* CFAbsoluteTimeExtension.swift in Sources */,
 				F7D5D20C22CAB898005D946C /* APIError.swift in Sources */,
+				F7D5D21722CAC877005D946C /* Server.swift in Sources */,
 				F7D5D1FD22CAB4C1005D946C /* ServerListWorker.swift in Sources */,
 				F73C5AB822CA8CA400E16863 /* ServerListModels.swift in Sources */,
 				F7D5D1FB22CAB495005D946C /* URLSessionExtension.swift in Sources */,
+				F7D5D21922CACC92005D946C /* ServerCoreDataWorker.swift in Sources */,
 				F73C5A7D22CA86A000E16863 /* AppDelegate.swift in Sources */,
 				F7D5D20D22CAB898005D946C /* RequestCache.swift in Sources */,
 				F73C5ABC22CA8CFD00E16863 /* CoreDataManager.swift in Sources */,

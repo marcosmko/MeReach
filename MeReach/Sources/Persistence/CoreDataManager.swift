@@ -82,6 +82,17 @@ public final class CoreDataManager {
         try object.managedObjectContext?.save()
     }
     
+    public func delete(_ object: NSManagedObject) throws {
+        let context = object.managedObjectContext
+        context?.delete(object)
+        do {
+            try context?.save()
+        } catch {
+            context?.insert(object)
+            throw error
+        }
+    }
+    
     public func fetch<T>(_ request: NSFetchRequest<T>) throws -> [T] {
         let context: NSManagedObjectContext = self.viewContext
         return try context.fetch(request)

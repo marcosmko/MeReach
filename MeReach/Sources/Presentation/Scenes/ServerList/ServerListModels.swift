@@ -10,6 +10,11 @@ import Foundation
 
 enum ServerList {
     
+    struct DisplayedServer {
+        let url: String
+        let isOnline: Bool
+    }
+    
     enum AddNewServer {
         struct Request {
             let url: String?
@@ -19,10 +24,28 @@ enum ServerList {
             let url: String
         }
         struct ViewModel {
-            struct DisplayedServer {
-                let url: String
-                let isOnline: Bool
-            }
+            let displayedServer: DisplayedServer
+        }
+    }
+    
+    enum RemoveServer {
+        struct Request {
+            let row: Int
+        }
+        struct Response {
+            let isError: Bool
+            let url: String
+        }
+        struct ViewModel {
+            let displayedServer: DisplayedServer
+        }
+    }
+    
+    enum ServerStatus {
+        struct Response {
+            let servers: [Server]
+        }
+        struct ViewModel {
             let displayedServers: [DisplayedServer]
         }
     }

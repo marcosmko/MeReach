@@ -10,7 +10,7 @@ import UIKit
 
 protocol ServerListDisplayLogic: class {
     func display(viewModel: ServerList.AddNewServer.ViewModel)
-    func display(viewModel: ServerList.AddNewServer.ViewModel.DisplayedServer)
+    func display(viewModel: ServerList.ServerStatus.ViewModel)
     func errorAddingServer(viewModel: ServerList.AddNewServer.ViewModel)
 }
 
@@ -22,7 +22,7 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
     var interactor: ServerListInteractorProtocol?
     var router: ServerListRouterProtocol?
     
-    var displayedServers: [ServerList.AddNewServer.ViewModel.DisplayedServer] = []
+    var displayedServers: [ServerList.DisplayedServer] = []
     
     private func setup() {
         let viewController = self
@@ -48,7 +48,7 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.interactor?.didLoad()
     }
     
     @IBAction private func add(_ sender: Any) {
@@ -56,13 +56,14 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
     }
     
     func display(viewModel: ServerList.AddNewServer.ViewModel) {
+        self.urlTextField.text = "http://"
+        self.urlTextField.textColor = UIColor.black
+        self.displayedServers.append(viewModel.displayedServer)
         self.tableView.reloadData()
     }
     
-    func display(viewModel: ServerList.AddNewServer.ViewModel.DisplayedServer) {
-        self.urlTextField.text = ""
-        self.urlTextField.textColor = UIColor.black
-        self.displayedServers.append(viewModel)
+    func display(viewModel: ServerList.ServerStatus.ViewModel) {
+        self.displayedServers = viewModel.displayedServers
         self.tableView.reloadData()
     }
     
@@ -79,9 +80,19 @@ extension ServerListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = self.displayedServers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.displayedServers[indexPath.row].url
+        cell.textLabel?.text = viewModel.url
+        cell.backgroundColor = viewModel.isOnline ? UIColor.green : UIColor.red
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.displayedServers.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.interactor?.remove(request: ServerList.RemoveServer.Request(row: indexPath.row))
+        }
     }
     
 }
