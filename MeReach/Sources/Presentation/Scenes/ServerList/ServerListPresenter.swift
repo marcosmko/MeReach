@@ -18,10 +18,10 @@ class ServerListPresenter: ServerListPresenterProtocol {
     
     func present(response: ServerList.ServerStatus.Response) {
         let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
-            var displayedServers: [ServerList.DisplayedServer] = []
+            var displayedServers: [ServerList.ServerStatus.ViewModel.DisplayedServer] = []
             for (server, isOnline) in response.servers {
                 guard let url = server.url?.absoluteString else { continue }
-                displayedServers.append(ServerList.DisplayedServer(url: url, isOnline: isOnline))
+                displayedServers.append(ServerList.ServerStatus.ViewModel.DisplayedServer(url: url, isOnline: isOnline))
             }
             self.viewController?.display(viewModel: ServerList.ServerStatus.ViewModel(displayedServers: displayedServers))
         })

@@ -23,7 +23,7 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
     var interactor: ServerListInteractorProtocol?
     var router: ServerListRouterProtocol?
     
-    var displayedServers: BehaviorRelay<[ServerList.DisplayedServer]> = BehaviorRelay(value: [])
+    var displayedServers: BehaviorRelay<[ServerList.ServerStatus.ViewModel.DisplayedServer]> = BehaviorRelay(value: [])
     
     private func setup() {
         let viewController = self
