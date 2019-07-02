@@ -37,6 +37,7 @@
 		F7D5D21922CACC92005D946C /* ServerCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21822CACC92005D946C /* ServerCoreDataWorker.swift */; };
 		F7D5D21B22CB8570005D946C /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21A22CB8570005D946C /* QueueManager.swift */; };
 		F7D5D21D22CB899F005D946C /* ServerListAPIDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21C22CB899F005D946C /* ServerListAPIDummy.swift */; };
+		F7D5D21F22CB9DDC005D946C /* ReactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D21E22CB9DDC005D946C /* ReactManager.swift */; };
 		FC9929F2CEC9DC8892A17928 /* Pods_MeReachTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C1FCC37547E9074F292451 /* Pods_MeReachTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		F7D5D21822CACC92005D946C /* ServerCoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCoreDataWorker.swift; sourceTree = "<group>"; };
 		F7D5D21A22CB8570005D946C /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		F7D5D21C22CB899F005D946C /* ServerListAPIDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListAPIDummy.swift; sourceTree = "<group>"; };
+		F7D5D21E22CB9DDC005D946C /* ReactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 			children = (
 				F7D5D20522CAB898005D946C /* API */,
 				F7D5D21A22CB8570005D946C /* QueueManager.swift */,
+				F7D5D21E22CB9DDC005D946C /* ReactManager.swift */,
 			);
 			path = Mechanism;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				F73C5A7F22CA86A000E16863 /* ServerListViewController.swift in Sources */,
 				F7D5D20E22CAB898005D946C /* SHA1.swift in Sources */,
 				F73C5AB622CA8AC200E16863 /* ServerListRouter.swift in Sources */,
+				F7D5D21F22CB9DDC005D946C /* ReactManager.swift in Sources */,
 				F7D5D21422CAB941005D946C /* DataExtension.swift in Sources */,
 				F7D5D21522CAB941005D946C /* CFAbsoluteTimeExtension.swift in Sources */,
 				F7D5D20C22CAB898005D946C /* APIError.swift in Sources */,

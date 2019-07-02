@@ -7,22 +7,23 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 protocol ServerListDisplayLogic: class {
-    func display(viewModel: ServerList.AddNewServer.ViewModel)
     func display(viewModel: ServerList.ServerStatus.ViewModel)
-    func errorAddingServer(viewModel: ServerList.AddNewServer.ViewModel)
 }
 
 class ServerListViewController: UIViewController, ServerListDisplayLogic {
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var urlTextField: UITextField!
+    @IBOutlet private var addButton: UIButton!
     
     var interactor: ServerListInteractorProtocol?
     var router: ServerListRouterProtocol?
     
-    var displayedServers: [ServerList.DisplayedServer] = []
+    var displayedServers: BehaviorRelay<[ServerList.DisplayedServer]> = BehaviorRelay(value: [])
     
     private func setup() {
         let viewController = self
@@ -49,50 +50,56 @@ class ServerListViewController: UIViewController, ServerListDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.interactor?.didLoad()
+        self.setupTextField()
+        self.setupTable()
+        self.setupAddButton()
     }
     
-    @IBAction private func add(_ sender: Any) {
-        self.interactor?.add(request: ServerList.AddNewServer.Request(url: self.urlTextField.text))
+    private func setupTable() {
+        self.displayedServers
+            .bind(to: self.tableView
+                .rx
+                .items(cellIdentifier: "cell", cellType: UITableViewCell.self)) {
+                    row, server, cell in
+                    
+                    cell.textLabel?.text = server.url
+                    cell.backgroundColor = server.isOnline ? UIColor.green : UIColor.red
+            }
+            .disposed(by: ReactManager.shared.disposeBag)
+        
+        self.tableView.rx
+            .itemDeleted
+            .subscribe(onNext: { (indexPath) in
+                self.interactor?.remove(request: ServerList.RemoveServer.Request(row: indexPath.row))
+            })
+            .disposed(by: ReactManager.shared.disposeBag)
     }
     
-    func display(viewModel: ServerList.AddNewServer.ViewModel) {
-        self.urlTextField.text = "http://"
-        self.urlTextField.textColor = UIColor.black
-        self.displayedServers.append(viewModel.displayedServer)
-        self.tableView.reloadData()
+    private func setupTextField() {
+        self.urlTextField.rx
+            .text
+            .subscribe(onNext: { (text) in
+                guard let text = text, let url = URL(string: text), UIApplication.shared.canOpenURL(url) else {
+                    self.addButton.isEnabled = false
+                    return
+                }
+                self.addButton.isEnabled = true
+            })
+            .disposed(by: ReactManager.shared.disposeBag)
+    }
+    
+    private func setupAddButton() {
+        self.addButton.rx.tap
+            .subscribe(onNext: { (_) in
+                guard let url = URL(string: self.urlTextField.text ?? "") else { return }
+                self.interactor?.add(request: ServerList.AddNewServer.Request(url: url))
+            })
+            .disposed(by: ReactManager.shared.disposeBag)
     }
     
     func display(viewModel: ServerList.ServerStatus.ViewModel) {
-        self.displayedServers = viewModel.displayedServers
+        self.displayedServers.accept(viewModel.displayedServers)
         self.tableView.reloadData()
-    }
-    
-    func errorAddingServer(viewModel: ServerList.AddNewServer.ViewModel) {
-        self.urlTextField.textColor = UIColor.red
-    }
-    
-}
-
-extension ServerListViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.displayedServers.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = self.displayedServers[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = viewModel.url
-        cell.backgroundColor = viewModel.isOnline ? UIColor.green : UIColor.red
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-//            self.displayedServers.remove(at: indexPath.row)
-//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.interactor?.remove(request: ServerList.RemoveServer.Request(row: indexPath.row))
-        }
     }
     
 }

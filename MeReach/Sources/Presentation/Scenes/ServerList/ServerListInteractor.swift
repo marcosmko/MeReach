@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit.UIApplication
-import RxSwift
 import RxCocoa
+import RxSwift
 
 protocol ServerListInteractorProtocol {
     func didLoad()
@@ -30,7 +30,6 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
     var timer: Timer?
     let lock: NSLock = NSLock()
     
-    let disposeBag: DisposeBag = DisposeBag()
     let servers: BehaviorRelay<[(server: Server, isOnline: Bool)]> = BehaviorRelay(value: [])
     
     func didLoad() {
@@ -44,7 +43,7 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
             .subscribe(onNext: { [unowned self] servers in
                 self.presenter?.present(response: ServerList.ServerStatus.Response(servers: servers))
             })
-            .disposed(by: self.disposeBag)
+            .disposed(by: ReactManager.shared.disposeBag)
         
         // schedule timer
         self.timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { [weak self] (timer) in
@@ -59,17 +58,13 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
     
     func add(request: ServerList.AddNewServer.Request) {
         let blockForExecutionInBackground: BlockOperation = BlockOperation(block: {
-            guard let string = request.url else { return }
-            if let url = URL(string: string), !self.servers.value.contains(where: { $0.server.url == url }), UIApplication.shared.canOpenURL(url: url) {
-                // add url and ping
-                let server = Server(url: url)
-                self.servers.accept(self.servers.value + [(server, false)])
-                try! self.serverCoreDataWorker.create(server)
-                self.verify(url: url)
-            } else {
-                // invalid url
-                self.presenter?.present(response: ServerList.AddNewServer.Response(isError: true, url: ""))
-            }
+            guard !self.servers.value.contains(where: { $0.server.url == request.url }) else { return }
+            
+            // add url and ping
+            let server = Server(url: request.url)
+            self.servers.accept(self.servers.value + [(server, false)])
+            try! self.serverCoreDataWorker.create(server)
+            self.verify(url: request.url)
         })
         QueueManager.shared.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
     }
@@ -86,14 +81,8 @@ class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
     
     private func verify(url: URL) {
         let blockForExecutionInBackground: BlockOperation = BlockOperation(block: {
-            let isOnline: Bool
-            if (try? self.serverListWorker.ping(url: url)) == true {
-                print("\(url.absoluteString) is online")
-                isOnline = true
-            } else {
-                print("\(url.absoluteString) is offline")
-                isOnline = false
-            }
+            let isOnline: Bool = (try? self.serverListWorker.ping(url: url)) == true
+            debugPrint("\(url.absoluteString) is \(isOnline ? "online" : "offline")")
             
             // as we are updating asynchronously, we need to lock resources
             if let index = self.servers.value.firstIndex(where: { return $0.server.url == url }) {

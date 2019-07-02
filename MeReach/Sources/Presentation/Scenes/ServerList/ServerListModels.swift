@@ -17,14 +17,11 @@ enum ServerList {
     
     enum AddNewServer {
         struct Request {
-            let url: String?
+            let url: URL
         }
         struct Response {
-            let isError: Bool
-            let url: String
         }
         struct ViewModel {
-            let displayedServer: DisplayedServer
         }
     }
     
@@ -33,15 +30,14 @@ enum ServerList {
             let row: Int
         }
         struct Response {
-            let isError: Bool
-            let url: String
         }
         struct ViewModel {
-            let displayedServer: DisplayedServer
         }
     }
     
     enum ServerStatus {
+        struct Request {
+        }
         struct Response {
             let servers: [(Server, Bool)]
         }

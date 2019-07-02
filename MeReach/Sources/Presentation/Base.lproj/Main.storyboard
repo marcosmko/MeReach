@@ -34,9 +34,6 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tm-Lv-sIa">
                                             <rect key="frame" x="342" y="7" width="65" height="30"/>
                                             <state key="normal" title="Adicionar"/>
-                                            <connections>
-                                                <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QdI-Pc-btu"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,10 +57,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="P7O-U1-Joe"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fkQ-bQ-owS"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,6 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="6Tm-Lv-sIa" id="iTc-zc-GWx"/>
                         <outlet property="tableView" destination="S9Z-iP-ov7" id="RWR-vd-jyt"/>
                         <outlet property="urlTextField" destination="Hd0-Va-wy7" id="30o-Ud-Ogw"/>
                     </connections>

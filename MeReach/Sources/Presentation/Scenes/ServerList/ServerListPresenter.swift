@@ -9,24 +9,11 @@
 import Foundation
 
 protocol ServerListPresenterProtocol {
-    func present(response: ServerList.AddNewServer.Response)
     func present(response: ServerList.ServerStatus.Response)
 }
 
 class ServerListPresenter: ServerListPresenterProtocol {
     weak var viewController: ServerListDisplayLogic?
-    
-    func present(response: ServerList.AddNewServer.Response) {
-        let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
-            if response.isError {
-                self.viewController?.errorAddingServer(viewModel: ServerList.AddNewServer.ViewModel(displayedServer: ServerList.DisplayedServer(url: "", isOnline: false)))
-            } else {
-                self.viewController?.display(viewModel: ServerList.AddNewServer.ViewModel(displayedServer: ServerList.DisplayedServer(url: response.url, isOnline: false)))
-            }
-        })
-        
-        QueueManager.shared.executeBlock(blockForExecutionInMainThread, queueType: .main)
-    }
     
     func present(response: ServerList.ServerStatus.Response) {
         let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
@@ -37,7 +24,6 @@ class ServerListPresenter: ServerListPresenterProtocol {
             }
             self.viewController?.display(viewModel: ServerList.ServerStatus.ViewModel(displayedServers: displayedServers))
         })
-        
         QueueManager.shared.executeBlock(blockForExecutionInMainThread, queueType: .main)
     }
     
