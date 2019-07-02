@@ -24,7 +24,7 @@ protocol ServerListDataStore {
 class ServerListInteractor: ServerListInteractorProtocol, ServerListDataStore {
     
     var presenter: ServerListPresenterProtocol?
-    private var serverListWorker: ServerListWorker = ServerListWorker(serverListStore: ServerListAPIDummy())
+    private var serverListWorker: ServerListWorker = ServerListWorker(serverListStore: ServerListAPI())
     private var serverWorkerProtocol: ServerWorkerProtocol = ServerCoreDataWorker()
     
     private var timer: Timer?
