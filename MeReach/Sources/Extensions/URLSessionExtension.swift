@@ -30,3 +30,16 @@ extension URLSession {
     }
     
 }
+
+import UIKit
+
+extension UIApplication {
+    
+    func canOpenURL(url: URL) -> Bool {
+        var canOpen: Bool = false
+        DispatchQueue.main.sync {
+            canOpen = self.canOpenURL(url)
+        }
+        return canOpen
+    }
+}

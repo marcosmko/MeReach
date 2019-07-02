@@ -17,20 +17,28 @@ class ServerListPresenter: ServerListPresenterProtocol {
     weak var viewController: ServerListDisplayLogic?
     
     func present(response: ServerList.AddNewServer.Response) {
-        if response.isError {
-            self.viewController?.errorAddingServer(viewModel: ServerList.AddNewServer.ViewModel(displayedServer: ServerList.DisplayedServer(url: "", isOnline: false)))
-        } else {
-            self.viewController?.display(viewModel: ServerList.AddNewServer.ViewModel(displayedServer: ServerList.DisplayedServer(url: response.url, isOnline: false)))
-        }
+        let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
+            if response.isError {
+                self.viewController?.errorAddingServer(viewModel: ServerList.AddNewServer.ViewModel(displayedServer: ServerList.DisplayedServer(url: "", isOnline: false)))
+            } else {
+                self.viewController?.display(viewModel: ServerList.AddNewServer.ViewModel(displayedServer: ServerList.DisplayedServer(url: response.url, isOnline: false)))
+            }
+        })
+        
+        QueueManager.shared.executeBlock(blockForExecutionInMainThread, queueType: .main)
     }
     
     func present(response: ServerList.ServerStatus.Response) {
-        var displayedServers: [ServerList.DisplayedServer] = []
-        for server in response.servers {
-            guard let url = server.url?.absoluteString else { continue }
-            displayedServers.append(ServerList.DisplayedServer(url: url, isOnline: server.isOnline))
-        }
-        self.viewController?.display(viewModel: ServerList.ServerStatus.ViewModel(displayedServers: displayedServers))
+        let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
+            var displayedServers: [ServerList.DisplayedServer] = []
+            for (server, isOnline) in response.servers {
+                guard let url = server.url?.absoluteString else { continue }
+                displayedServers.append(ServerList.DisplayedServer(url: url, isOnline: isOnline))
+            }
+            self.viewController?.display(viewModel: ServerList.ServerStatus.ViewModel(displayedServers: displayedServers))
+        })
+        
+        QueueManager.shared.executeBlock(blockForExecutionInMainThread, queueType: .main)
     }
     
 }

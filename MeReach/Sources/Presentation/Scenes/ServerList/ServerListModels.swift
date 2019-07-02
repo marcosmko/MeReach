@@ -43,7 +43,7 @@ enum ServerList {
     
     enum ServerStatus {
         struct Response {
-            let servers: [Server]
+            let servers: [(Server, Bool)]
         }
         struct ViewModel {
             let displayedServers: [DisplayedServer]

@@ -12,7 +12,6 @@ import CoreData
 class Server: NSManagedObject {
     
     @NSManaged var url: URL?
-    var isOnline: Bool = false
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Server> {
         return NSFetchRequest<Server>(entityName: String(describing: self))

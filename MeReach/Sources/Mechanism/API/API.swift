@@ -26,7 +26,7 @@ class API {
         guard let urlWithComponents = components.url else {
             throw APIError.malformedURL
         }
-        var urlRequest = URLRequest(url: urlWithComponents, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 120)
+        var urlRequest = URLRequest(url: urlWithComponents, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 1)
         urlRequest.httpShouldHandleCookies = false
         urlRequest.httpShouldUsePipelining = true
         urlRequest.httpMethod = request.method.rawValue

@@ -89,8 +89,8 @@ extension ServerListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.displayedServers.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//            self.displayedServers.remove(at: indexPath.row)
+//            self.tableView.deleteRows(at: [indexPath], with: .automatic)
             self.interactor?.remove(request: ServerList.RemoveServer.Request(row: indexPath.row))
         }
     }
